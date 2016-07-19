@@ -53,4 +53,11 @@ public class CellWrapperTest {
     public void sixteenWrapperTest() throws Exception {
         executeTest(16, Color.blue);
     }
+
+    @Test
+    public void thirtyTwoWrapperTest() throws Exception {
+        executeTest(32, Color.purple);
+    }
+
+
 }
