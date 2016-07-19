@@ -16,10 +16,16 @@ public class GameCell {
         return number;
     }
 
-    public void increaseNumber(int number) {
-        this.number += number;
+    public void increaseNumber() {
+        if (number == 2048)
+            return;
+        if (number == 0) {
+            this.number = 2;
+        }
+        else {
+            this.number *= 2;
+        }
     }
 
-    
 
 }

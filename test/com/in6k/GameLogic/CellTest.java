@@ -31,16 +31,20 @@ public class CellTest {
 
     @Test
     public void emptyCellIncreaseNumberTest() throws Exception {
-        emptyCell.increaseNumber(testNumber);
-        assertThat(emptyCell.getNumber(), is(testNumber));
+        emptyCell.increaseNumber();
+        assertThat(emptyCell.getNumber(), is(2));
     }
 
     @Test
     public void parameterCellIncreaseNumber() throws Exception {
-        parameterCell.increaseNumber(testNumber);
+        parameterCell.increaseNumber();
         assertThat(parameterCell.getNumber(), is(testNumber * 2));
     }
 
-
-
+    @Test
+    public void maxValueIncreaseTest() throws Exception {
+        parameterCell = new GameCell(2048);
+        parameterCell.increaseNumber();
+        assertThat(parameterCell.getNumber(), is(2048));
+    }
 }
