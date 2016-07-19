@@ -1,5 +1,7 @@
 package com.in6k.GameLogic.Board;
 
+import com.in6k.GameLogic.Board.SupportBoardItems.BoardRandomize;
+import com.in6k.GameLogic.Board.SupportBoardItems.Randomize;
 import com.in6k.GameLogic.Cell.GameCell;
 
 public class GameBoard {

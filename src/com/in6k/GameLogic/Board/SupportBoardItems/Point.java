@@ -1,4 +1,4 @@
-package com.in6k.GameLogic.Board;
+package com.in6k.GameLogic.Board.SupportBoardItems;
 
 public class Point {
 

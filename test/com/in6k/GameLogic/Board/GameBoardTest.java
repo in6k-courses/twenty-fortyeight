@@ -1,5 +1,7 @@
 package com.in6k.GameLogic.Board;
 
+import com.in6k.GameLogic.Board.SupportBoardItems.Point;
+import com.in6k.GameLogic.Board.SupportBoardItems.Randomize;
 import com.in6k.GameLogic.Cell.GameCell;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,14 +46,14 @@ public class GameBoardTest implements Randomize {
 
     @Test
     public void generateRandomPointWithNumberTest() throws Exception {
-        Point point = generateRandomPoint();
+        Point point = generateRandomPoint(boardSize);
         int actualNumber = board.getBoard()[point.getX()][point.getY()].getNumber();
         int expectNumber = generateRandomNumber();
         assertThat(actualNumber, is(expectNumber));
     }
 
     @Override
-    public Point generateRandomPoint() {
+    public Point generateRandomPoint(int maxValue) {
         Point p = new Point(3,3);
         board.getBoard()[3][3] = new GameCell(generateRandomNumber());
         return p;
@@ -61,6 +63,7 @@ public class GameBoardTest implements Randomize {
     public int generateRandomNumber() {
         return 2;
     }
+
 
 
 }
