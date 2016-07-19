@@ -84,5 +84,8 @@ public class CellWrapperTest {
         executeTest(1024, Color.yellowBack);
     }
 
-
+    @Test
+    public void whiteBackWrapperTest() throws Exception {
+        executeTest(2048, Color.yellowBack);
+    }
 }
