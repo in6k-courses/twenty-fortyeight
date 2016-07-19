@@ -12,36 +12,39 @@ public class CellWrapperTest {
 
     private CellWrapper cellWrapper;
 
-    private String expectWrapper;
-    private String actualWrapper;
-
     @Before
     public void setUp() throws Exception {
         cellWrapper = new CellWrapper();
     }
 
-    @Test
-    public void emptyWrapperTest() throws Exception {
-        expectWrapper = cellDelimiterWrapper(Color.white, " ");
-        actualWrapper = cellWrapper.wrapper(0);
-        assertThat(actualWrapper, is(expectWrapper));
-    }
-
-    private String cellDelimiterWrapper(String color, String value) {
-        value = String.format("%4s", value);
-        return Delimiter.celleLeft + color + value + Delimiter.cellRigth;
-    }
-
-    @Test
-    public void cellWith2WrapperTest() throws Exception {
-        expectWrapper = cellDelimiterWrapper(Color.red, "2");
-        actualWrapper = cellWrapper.wrapper(2);
+    private void executeTest(int testNumber, String color) {
+        String expectWrapper = cellDelimiterWrapper(color, testNumber);
+        String actualWrapper = cellWrapper.wrapper(testNumber);
         System.out.println(actualWrapper);
         assertThat(actualWrapper, is(expectWrapper));
     }
 
+    private String cellDelimiterWrapper(String color, int number) {
+        String numberToString = (number == 0) ? " " : String.valueOf(number);
+        String formatted = String.format("%4s", numberToString);
+        return color + Delimiter.celleLeft + formatted + Delimiter.cellRigth;
+    }
 
+    @Test
+    public void emptyWrapperTest() throws Exception {
+        executeTest(0, Color.white);
+    }
 
+    @Test
+    public void twoWrapperTest() throws Exception {
+        executeTest(2, Color.red);
+    }
+
+    @Test
+    public void fourWrapperTest() throws Exception {
+        executeTest(4, Color.green);
+    }
 
     
+
 }

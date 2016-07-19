@@ -19,12 +19,7 @@ public class GameCell {
     public void increaseNumber() {
         if (number == 2048)
             return;
-        if (number == 0) {
-            this.number = 2;
-        }
-        else {
-            this.number *= 2;
-        }
+        this.number = (number == 0) ? 2 : number * 2;
     }
 
 

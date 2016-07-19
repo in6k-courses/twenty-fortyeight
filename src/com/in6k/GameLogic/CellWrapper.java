@@ -27,13 +27,8 @@ public class CellWrapper {
 
     public String wrapper(int number) {
         String color = colorWrapper.get(number);
-        String variable;
-        if (number == 0) {
-            variable = String.format("%4s", " ");
-        }
-        else {
-            variable = String.format("%4s", number);
-        }
-        return Delimiter.celleLeft + color + variable + Delimiter.cellRigth;
+        String numberToString = (number == 0) ? " " : String.valueOf(number);
+        String formatted = String.format("%4s", numberToString);
+        return color + Delimiter.celleLeft + formatted + Delimiter.cellRigth;
     }
 }
