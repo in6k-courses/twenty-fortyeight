@@ -41,4 +41,6 @@ public class CellTest {
         assertThat(parameterCell.getNumber(), is(testNumber * 2));
     }
 
+
+
 }

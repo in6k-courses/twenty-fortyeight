@@ -5,7 +5,7 @@ public class GameCell {
     private int number;
 
     public GameCell () {
-        this.number = 0;
+        this(0);
     }
 
     public GameCell (int number) {
@@ -20,6 +20,6 @@ public class GameCell {
         this.number += number;
     }
 
-
+    
 
 }
