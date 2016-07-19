@@ -4,9 +4,7 @@ import com.in6k.GameLogic.Cell.GameCell;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -33,15 +31,16 @@ public class GameBoardTest {
 
     @Test
     public void boardWithEmptyCellsTest() throws Exception {
-        board.initializeBoard();
-        testBoard = TestHelper.initTestBoardEmptyCells(testBoard, boardSize);
-
+        initializeBoardsEmptyCells();
         List<Integer> testItems = TestHelper.getItemsFromBoards(testBoard, boardSize);
         List<Integer> boardItems = TestHelper.getItemsFromBoards(board.getBoard(), boardSize);
-
         assertThat(testItems, equalTo(boardItems));
     }
 
+    private void initializeBoardsEmptyCells() {
+        board.initializeBoard();
+        testBoard = TestHelper.initTestBoardEmptyCells(testBoard, boardSize);
+    }
 
 
 

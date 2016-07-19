@@ -11,8 +11,8 @@ public class GameBoard {
         this(4);
     }
 
-    public GameBoard(int i) {
-        this.boardSize = 4;
+    public GameBoard(int size) {
+        this.boardSize = size;
         this.board = new GameCell[boardSize][boardSize];
     }
 
@@ -31,6 +31,7 @@ public class GameBoard {
             }
         }
     }
+
 
 
 }
