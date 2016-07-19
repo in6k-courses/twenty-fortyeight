@@ -73,4 +73,11 @@ public class CellWrapperTest {
     public void twoFiveSixWrapperTest() throws Exception {
         executeTest(256, Color.blueBack);
     }
+
+    @Test
+    public void fiveOneTwoWrapperTest() throws Exception {
+        executeTest(512, Color.purpleBack);
+    }
+
+    
 }
