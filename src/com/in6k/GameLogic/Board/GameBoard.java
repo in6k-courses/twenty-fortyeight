@@ -1,8 +1,10 @@
 package com.in6k.GameLogic.Board;
 
+import com.in6k.GameLogic.Cell.GameCell;
+
 public class GameBoard {
 
-    private String[][] board;
+    private GameCell[][] board;
     private int boardSize;
 
     public GameBoard() {
@@ -11,10 +13,10 @@ public class GameBoard {
 
     public GameBoard(int i) {
         this.boardSize = 4;
-        this.board = new String[boardSize][boardSize];
+        this.board = new GameCell[boardSize][boardSize];
     }
 
-    public String[][] getBoard() {
+    public GameCell[][] getBoard() {
         return board;
     }
 
@@ -22,7 +24,13 @@ public class GameBoard {
         return boardSize;
     }
 
-
+    public void initializeBoard() {
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                board[i][j] = new GameCell();
+            }
+        }
+    }
 
 
 }
