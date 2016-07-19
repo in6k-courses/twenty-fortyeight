@@ -3,7 +3,7 @@ package com.in6k.ScoreManager;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class ScoreAgentTest {
@@ -31,4 +31,7 @@ public class ScoreAgentTest {
         scoreAgent.addPoints(-10);
         assertThat(scoreAgent.getScore(), is(0));
     }
+
+    
+
 }
