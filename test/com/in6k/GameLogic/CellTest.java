@@ -30,10 +30,15 @@ public class CellTest {
     }
 
     @Test
-    public void increaseNumberEmptyCellTest() throws Exception {
+    public void emptyCellIncreaseNumberTest() throws Exception {
         emptyCell.increaseNumber(testNumber);
         assertThat(emptyCell.getNumber(), is(testNumber));
     }
 
+    @Test
+    public void parameterCellIncreaseNumber() throws Exception {
+        parameterCell.increaseNumber(testNumber);
+        assertThat(parameterCell.getNumber(), is(testNumber * 2));
+    }
 
 }
