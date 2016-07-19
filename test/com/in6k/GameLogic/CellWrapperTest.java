@@ -63,4 +63,11 @@ public class CellWrapperTest {
     public void sixtyFourWrapperTest() throws Exception {
         executeTest(64, Color.skyBlue);
     }
+
+    @Test
+    public void hundredTwentyEighthWrapperTest() throws Exception {
+        executeTest(128, Color.greenBack);
+    }
+
+    
 }
