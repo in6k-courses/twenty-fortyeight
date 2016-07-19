@@ -11,21 +11,29 @@ public class CellWrapper {
     private Map<Integer, String> colorWrapper = new HashMap<>();
 
     public CellWrapper() {
-       /* colorWrapper.add(0, Color.white);
-        colorWrapper.add(2, Color.red);
-        colorWrapper.add(4, Color.green);
-        colorWrapper.add(8, Color.yellow);
-        colorWrapper.add(16, Color.blue);
-        colorWrapper.add(32, Color.purple);
-        colorWrapper.add(64, Color.skyBlue);
-        colorWrapper.add(128, Color.greenBack);
-        colorWrapper.add(256, Color.blueBack);
-        colorWrapper.add(512, Color.purpleBack);
-        colorWrapper.add(1024, Color.yellowBack);
-        colorWrapper.add(2048, Color.whiteBack);*/
+        colorWrapper.put(0, Color.white);
+        colorWrapper.put(2, Color.red);
+        colorWrapper.put(4, Color.green);
+        colorWrapper.put(8, Color.yellow);
+        colorWrapper.put(16, Color.blue);
+        colorWrapper.put(32, Color.purple);
+        colorWrapper.put(64, Color.skyBlue);
+        colorWrapper.put(128, Color.greenBack);
+        colorWrapper.put(256, Color.blueBack);
+        colorWrapper.put(512, Color.purpleBack);
+        colorWrapper.put(1024, Color.yellowBack);
+        colorWrapper.put(2048, Color.whiteBack);
     }
 
     public String wrapper(int number) {
-        return Delimiter.left + colorWrapper.get(0) + number + Delimiter.rigth;
+        String color = colorWrapper.get(number);
+        String variable;
+        if (number == 0) {
+            variable = String.format("%4s", " ");
+        }
+        else {
+            variable = String.format("%4s", number);
+        }
+        return Delimiter.celleLeft + color + variable + Delimiter.cellRigth;
     }
 }

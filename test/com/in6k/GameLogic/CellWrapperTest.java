@@ -19,13 +19,16 @@ public class CellWrapperTest {
 
     @Test
     public void emptyWrapperTest() throws Exception {
-        String expectWrapper = delimiterWrapper();
+        String expectWrapper = cellDelimiterWrapper(Color.white, " ");
         String actualWrapper = cellWrapper.wrapper(0);
+        System.out.println(actualWrapper);
         assertThat(actualWrapper, is(expectWrapper));
     }
 
-    private String delimiterWrapper() {
-        return Delimiter.celleLeft + Color.white + 0 + Delimiter.cellRigth;
+    private String cellDelimiterWrapper(String color, String value) {
+        value = String.format("%4s", value);
+        return Delimiter.celleLeft + color + value + Delimiter.cellRigth;
     }
 
+    
 }
