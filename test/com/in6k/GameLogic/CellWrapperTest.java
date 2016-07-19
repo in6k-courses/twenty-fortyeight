@@ -12,6 +12,9 @@ public class CellWrapperTest {
 
     private CellWrapper cellWrapper;
 
+    private String expectWrapper;
+    private String actualWrapper;
+
     @Before
     public void setUp() throws Exception {
         cellWrapper = new CellWrapper();
@@ -19,9 +22,8 @@ public class CellWrapperTest {
 
     @Test
     public void emptyWrapperTest() throws Exception {
-        String expectWrapper = cellDelimiterWrapper(Color.white, " ");
-        String actualWrapper = cellWrapper.wrapper(0);
-        System.out.println(actualWrapper);
+        expectWrapper = cellDelimiterWrapper(Color.white, " ");
+        actualWrapper = cellWrapper.wrapper(0);
         assertThat(actualWrapper, is(expectWrapper));
     }
 
@@ -29,6 +31,17 @@ public class CellWrapperTest {
         value = String.format("%4s", value);
         return Delimiter.celleLeft + color + value + Delimiter.cellRigth;
     }
+
+    @Test
+    public void cellWith2WrapperTest() throws Exception {
+        expectWrapper = cellDelimiterWrapper(Color.red, "2");
+        actualWrapper = cellWrapper.wrapper(2);
+        System.out.println(actualWrapper);
+        assertThat(actualWrapper, is(expectWrapper));
+    }
+
+
+
 
     
 }
