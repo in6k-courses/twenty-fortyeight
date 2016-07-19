@@ -51,6 +51,8 @@ public class CellTest {
 
     @Test
     public void renderedEmptyCellTest () throws Exception {
-        
+        String renderedCell = emptyCell.renderedCell();
+        String expectCell = CellWrapper.wrapper(emptyCell.getNumber());
+        assertThat(renderedCell, is(expectCell));
     }
 }
