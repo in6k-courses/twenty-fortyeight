@@ -20,7 +20,6 @@ public class CellWrapperTest {
     private void executeTest(int testNumber, String color) {
         String expectWrapper = cellDelimiterWrapper(color, testNumber);
         String actualWrapper = cellWrapper.wrapper(testNumber);
-        System.out.println(actualWrapper);
         assertThat(actualWrapper, is(expectWrapper));
     }
 
@@ -45,6 +44,10 @@ public class CellWrapperTest {
         executeTest(4, Color.green);
     }
 
-    
+    @Test
+    public void eightWrapperTest() throws Exception {
+        executeTest(8, Color.yellow);
+    }
+
 
 }
