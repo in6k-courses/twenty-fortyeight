@@ -43,34 +43,24 @@ public class GameBoardTest implements Randomize {
     }
 
     @Test
-    public void xRandomPointTest() throws Exception {
-        int xPointBoard = board.getRandomize().generateRandomPoint().getX();
-        compareTwoNumbers(generateRandomPoint().getX(), xPointBoard);
-    }
-
-    @Test
-    public void yRandomPointTest() throws Exception {
-        int yPointBoard = board.getRandomize().generateRandomPoint().getY();
-        compareTwoNumbers(generateRandomPoint().getY(), yPointBoard);
-    }
-
-    private void compareTwoNumbers (int firstNumber, int secondNumber) {
-        assertThat(firstNumber, is(secondNumber));
-    }
-
-    @Test
-    public void randomNumberTest() throws Exception {
-        int boardRandomNumber = board.getRandomize().generateRandomNumber();
-        assertThat(generateRandomNumber(), is(boardRandomNumber));
+    public void generateRandomPointWithNumberTest() throws Exception {
+        Point point = generateRandomPoint();
+        int actualNumber = board.getBoard()[point.getX()][point.getY()].getNumber();
+        int expectNumber = generateRandomNumber();
+        assertThat(actualNumber, is(expectNumber));
     }
 
     @Override
     public Point generateRandomPoint() {
-        return new Point(3,3);
+        Point p = new Point(3,3);
+        board.getBoard()[3][3] = new GameCell(generateRandomNumber());
+        return p;
     }
 
     @Override
     public int generateRandomNumber() {
         return 2;
     }
+
+
 }
