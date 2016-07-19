@@ -28,8 +28,12 @@ public class ScoreAgentTest {
 
     @Test
     public void addNegativePointsTest() throws Exception {
-        scoreAgent.addPoints(-10);
-        assertThat(scoreAgent.getScore(), is(0));
+        try {
+            scoreAgent.addPoints(-10);
+        } catch (RuntimeException e) {
+            assertThat(e.getMessage(), is("Negatives not allowed."));
+        }
     }
+
 
 }

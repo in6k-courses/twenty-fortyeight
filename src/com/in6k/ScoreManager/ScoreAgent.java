@@ -13,9 +13,10 @@ public class ScoreAgent {
     }
 
     public void addPoints(int points) {
-        if (points >= 0) {
-            score += points;
+        if (points < 0) {
+            throw  new RuntimeException("Negatives not allowed.");
         }
+        score += points;
     }
 
 }
