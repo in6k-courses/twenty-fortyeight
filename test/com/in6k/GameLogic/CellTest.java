@@ -8,16 +8,26 @@ import static org.hamcrest.core.Is.is;
 
 public class CellTest {
 
-    private GameCell gameCell;
+    private GameCell emptyCell;
+    private GameCell parameterCell;
+
+    private int testNumber = 7;
 
     @Before
     public void setUp () throws Exception {
-        gameCell = new GameCell();
+        emptyCell = new GameCell();
+        parameterCell = new GameCell(testNumber);
     }
 
     @Test
     public void checkNumberEmptyCellTest() throws Exception {
-        assertThat(gameCell.getNumber(), is(0));
-
+        assertThat(emptyCell.getCellNumber(), is(0));
     }
+
+    @Test
+    public void numberFromCellWithParameter() throws Exception {
+        assertThat(parameterCell.getCellNumber(), is(testNumber));
+    }
+
+
 }
