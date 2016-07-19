@@ -58,11 +58,14 @@ public class GameBoardTest implements Randomize {
         assertThat(firstNumber, is(secondNumber));
     }
 
-
+    @Test
+    public void randomNumberTest() throws Exception {
+        int boardRandomNumber = board.getRandomize().generateRandomNumber();
+        assertThat(generateRandomNumber(), is(boardRandomNumber));
+    }
 
     @Override
     public Point generateRandomPoint() {
-
         return new Point(3,3);
     }
 
