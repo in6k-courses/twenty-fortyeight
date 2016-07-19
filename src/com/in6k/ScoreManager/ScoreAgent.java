@@ -11,4 +11,8 @@ public class ScoreAgent {
     public int getScore() {
         return score;
     }
+
+    public void addPoints(int points) {
+        score += points;
+    }
 }

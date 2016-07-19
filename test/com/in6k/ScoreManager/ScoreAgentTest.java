@@ -17,7 +17,13 @@ public class ScoreAgentTest {
 
     @Test
     public void afterCreateTest() throws Exception {
-        int actualScore = scoreAgent.getScore();
-        assertThat(actualScore, is(0));
+        assertThat(scoreAgent.getScore(), is(0));
     }
+
+    @Test
+    public void addPointsTest() throws Exception {
+        scoreAgent.addPoints(10);
+        assertThat(scoreAgent.getScore(), is(10));
+    }
+    
 }
