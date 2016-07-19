@@ -53,6 +53,15 @@ public class CellTest {
     public void renderedEmptyCellTest () throws Exception {
         String renderedCell = emptyCell.renderedCell();
         String expectCell = CellWrapper.wrapper(emptyCell.getNumber());
+        System.out.println(renderedCell + " " + expectCell);
+        assertThat(renderedCell, is(expectCell));
+    }
+
+    @Test
+    public void maxNumberCellTest () throws Exception {
+        parameterCell = new GameCell(2048);
+        String renderedCell = parameterCell.renderedCell();
+        String expectCell = CellWrapper.wrapper(parameterCell.getNumber());
         assertThat(renderedCell, is(expectCell));
     }
 }
