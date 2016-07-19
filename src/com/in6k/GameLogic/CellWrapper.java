@@ -8,9 +8,9 @@ import java.util.Map;
 
 public class CellWrapper {
 
-    private Map<Integer, String> colors = new HashMap<>();
+    private static Map<Integer, String> colors = new HashMap<>();
 
-    public CellWrapper() {
+    public static void initializeCellWrapper() {
         colors.put(0, Color.white);
         colors.put(2, Color.red);
         colors.put(4, Color.green);
@@ -25,12 +25,12 @@ public class CellWrapper {
         colors.put(2048, Color.whiteBack);
     }
 
-    public String wrapper(int number) {
+    public static String wrapper(int number) {
         String numberToString = (number == 0) ? " " : String.valueOf(number);
         String formatted = String.format("%4s", numberToString);
         return colors.get(number)
                 + Delimiter.celleLeft
                 + formatted
-                + Delimiter.cellRigth;
+                + Delimiter.cellRight;
     }
 }

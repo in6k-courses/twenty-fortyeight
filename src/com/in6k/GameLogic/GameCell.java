@@ -22,5 +22,7 @@ public class GameCell {
         this.number = (number == 0) ? 2 : number * 2;
     }
 
-
+    public String renderedCell () {
+        return CellWrapper.wrapper(number);
+    }
 }

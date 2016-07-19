@@ -17,6 +17,7 @@ public class CellTest {
     public void setUp () throws Exception {
         emptyCell = new GameCell();
         parameterCell = new GameCell(testNumber);
+        CellWrapper.initializeCellWrapper();
     }
 
     @Test
@@ -46,5 +47,10 @@ public class CellTest {
         parameterCell = new GameCell(2048);
         parameterCell.increaseNumber();
         assertThat(parameterCell.getNumber(), is(2048));
+    }
+
+    @Test
+    public void renderedEmptyCellTest () throws Exception {
+        
     }
 }
