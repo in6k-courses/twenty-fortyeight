@@ -49,5 +49,8 @@ public class CellWrapperTest {
         executeTest(8, Color.yellow);
     }
 
-
+    @Test
+    public void sixteenWrapperTest() throws Exception {
+        executeTest(16, Color.blue);
+    }
 }
