@@ -65,9 +65,12 @@ public class CellWrapperTest {
     }
 
     @Test
-    public void hundredTwentyEighthWrapperTest() throws Exception {
+    public void oneTwoEighthWrapperTest() throws Exception {
         executeTest(128, Color.greenBack);
     }
 
-    
+    @Test
+    public void twoFiveSixWrapperTest() throws Exception {
+        executeTest(256, Color.blueBack);
+    }
 }
