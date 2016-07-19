@@ -1,5 +1,6 @@
 package com.in6k.GameLogic;
 
+import com.in6k.GameLogic.Cell.CellWrapper;
 import com.in6k.GameResource.Color;
 import com.in6k.GameResource.Delimiter;
 import org.junit.Before;

@@ -1,5 +1,7 @@
 package com.in6k.GameLogic;
 
+import com.in6k.GameLogic.Cell.CellWrapper;
+import com.in6k.GameLogic.Cell.GameCell;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,18 +52,21 @@ public class CellTest {
     }
 
     @Test
-    public void renderedEmptyCellTest () throws Exception {
-        String renderedCell = emptyCell.renderedCell();
+    public void emptyCellRenderedTest () throws Exception {
         String expectCell = CellWrapper.wrapper(emptyCell.getNumber());
-        System.out.println(renderedCell + " " + expectCell);
-        assertThat(renderedCell, is(expectCell));
+        assertThat(emptyCell.renderedCell(), is(expectCell));
     }
 
     @Test
-    public void maxNumberCellTest () throws Exception {
-        parameterCell = new GameCell(2048);
-        String renderedCell = parameterCell.renderedCell();
+    public void parameterCellRenderedTest() throws Exception {
         String expectCell = CellWrapper.wrapper(parameterCell.getNumber());
-        assertThat(renderedCell, is(expectCell));
+        assertThat(parameterCell.renderedCell(), is(expectCell));
+    }
+
+    @Test
+    public void maxNumberCellRenderTest () throws Exception {
+        parameterCell = new GameCell(2048);
+        String expectCell = CellWrapper.wrapper(parameterCell.getNumber());
+        assertThat(parameterCell.renderedCell(), is(expectCell));
     }
 }

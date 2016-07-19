@@ -1,4 +1,4 @@
-package com.in6k.GameLogic;
+package com.in6k.GameLogic.Cell;
 
 import com.in6k.GameResource.Color;
 import com.in6k.GameResource.Delimiter;

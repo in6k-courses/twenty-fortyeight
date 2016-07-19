@@ -1,4 +1,4 @@
-package com.in6k.GameLogic;
+package com.in6k.GameLogic.Cell;
 
 public class GameCell {
 
