@@ -11,7 +11,7 @@ public class CellTest {
     private GameCell emptyCell;
     private GameCell parameterCell;
 
-    private int testNumber = 7;
+    private int testNumber = 32;
 
     @Before
     public void setUp () throws Exception {
@@ -21,12 +21,18 @@ public class CellTest {
 
     @Test
     public void checkNumberEmptyCellTest() throws Exception {
-        assertThat(emptyCell.getCellNumber(), is(0));
+        assertThat(emptyCell.getNumber(), is(0));
     }
 
     @Test
     public void numberFromCellWithParameter() throws Exception {
-        assertThat(parameterCell.getCellNumber(), is(testNumber));
+        assertThat(parameterCell.getNumber(), is(testNumber));
+    }
+
+    @Test
+    public void increaseNumberEmptyCellTest() throws Exception {
+        emptyCell.increaseNumber(testNumber);
+        assertThat(emptyCell.getNumber(), is(testNumber));
     }
 
 

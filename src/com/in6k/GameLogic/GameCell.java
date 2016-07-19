@@ -12,9 +12,14 @@ public class GameCell {
         this.number = number;
     }
 
-    public int getCellNumber() {
+    public int getNumber() {
         return number;
     }
+
+    public void increaseNumber(int number) {
+        this.number += number;
+    }
+
 
 
 }
