@@ -6,14 +6,20 @@ public class GameBoard {
 
     private GameCell[][] board;
     private int boardSize;
+    private Randomize randomize;
 
     public GameBoard() {
-        this(4);
+        this(new BoardRandomize());
     }
 
-    public GameBoard(int size) {
+    public GameBoard(Randomize randomize) {
+        this(4, randomize);
+    }
+
+    public GameBoard(int size, Randomize randomize) {
         this.boardSize = size;
         this.board = new GameCell[boardSize][boardSize];
+        this.randomize = randomize;
     }
 
     public GameCell[][] getBoard() {
@@ -22,6 +28,10 @@ public class GameBoard {
 
     public int getBoardSize() {
         return boardSize;
+    }
+
+    public Randomize getRandomize() {
+        return randomize;
     }
 
     public void initializeBoard() {

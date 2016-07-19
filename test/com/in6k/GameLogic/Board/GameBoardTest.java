@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class GameBoardTest {
+public class GameBoardTest implements Randomize {
 
     private GameBoard board;
 
@@ -19,7 +19,7 @@ public class GameBoardTest {
 
     @Before
     public void setUp() throws Exception {
-        board = new GameBoard();
+        board = new GameBoard(this);
         boardSize = board.getBoardSize();
         testBoard = new GameCell[boardSize][boardSize];
     }
@@ -42,6 +42,20 @@ public class GameBoardTest {
         testBoard = TestHelper.initTestBoardEmptyCells(testBoard, boardSize);
     }
 
+    @Test
+    public void randomXPointTest() throws Exception {
+        Point testPoint = generateRandomPoint();
+        Point boardPoint = board.getRandomize().generateRandomPoint();
+        assertThat(testPoint.getX(), equalTo(boardPoint.getX()));
+    }
 
+    @Override
+    public Point generateRandomPoint() {
+        return new Point(3,3);
+    }
 
+    @Override
+    public int generateRandomNumber() {
+        return 2;
+    }
 }
