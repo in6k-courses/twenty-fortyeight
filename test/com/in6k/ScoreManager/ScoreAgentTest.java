@@ -25,5 +25,10 @@ public class ScoreAgentTest {
         scoreAgent.addPoints(10);
         assertThat(scoreAgent.getScore(), is(10));
     }
-    
+
+    @Test
+    public void addNegativePointsTest() throws Exception {
+        scoreAgent.addPoints(-10);
+        assertThat(scoreAgent.getScore(), is(0));
+    }
 }

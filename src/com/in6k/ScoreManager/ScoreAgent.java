@@ -13,6 +13,8 @@ public class ScoreAgent {
     }
 
     public void addPoints(int points) {
-        score += points;
+        if (points >= 0) {
+            score += points;
+        }
     }
 }
