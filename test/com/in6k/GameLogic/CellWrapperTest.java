@@ -35,49 +35,54 @@ public class CellWrapperTest {
     }
 
     @Test
-    public void twoWrapperTest() throws Exception {
+    public void redWrapperTest() throws Exception {
         executeTest(2, Color.red);
     }
 
     @Test
-    public void fourWrapperTest() throws Exception {
+    public void greenWrapperTest() throws Exception {
         executeTest(4, Color.green);
     }
 
     @Test
-    public void eightWrapperTest() throws Exception {
+    public void yellowWrapperTest() throws Exception {
         executeTest(8, Color.yellow);
     }
 
     @Test
-    public void sixteenWrapperTest() throws Exception {
+    public void blueWrapperTest() throws Exception {
         executeTest(16, Color.blue);
     }
 
     @Test
-    public void thirtyTwoWrapperTest() throws Exception {
+    public void purpleTwoWrapperTest() throws Exception {
         executeTest(32, Color.purple);
     }
 
     @Test
-    public void sixtyFourWrapperTest() throws Exception {
+    public void skyBlueWrapperTest() throws Exception {
         executeTest(64, Color.skyBlue);
     }
 
     @Test
-    public void oneTwoEighthWrapperTest() throws Exception {
+    public void greenBackWrapperTest() throws Exception {
         executeTest(128, Color.greenBack);
     }
 
     @Test
-    public void twoFiveSixWrapperTest() throws Exception {
+    public void blueBackWrapperTest() throws Exception {
         executeTest(256, Color.blueBack);
     }
 
     @Test
-    public void fiveOneTwoWrapperTest() throws Exception {
+    public void purpleBackWrapperTest() throws Exception {
         executeTest(512, Color.purpleBack);
     }
 
-    
+    @Test
+    public void yellowBackWrapperTest() throws Exception {
+        executeTest(1024, Color.yellowBack);
+    }
+
+
 }
