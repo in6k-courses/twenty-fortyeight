@@ -1,7 +1,5 @@
-package com.in6k.GameLogic;
+package com.in6k.GameLogic.Cell;
 
-import com.in6k.GameLogic.Cell.CellWrapper;
-import com.in6k.GameLogic.Cell.GameCell;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +17,6 @@ public class CellTest {
     public void setUp () throws Exception {
         emptyCell = new GameCell();
         parameterCell = new GameCell(testNumber);
-        CellWrapper.initializeCellWrapper();
     }
 
     @Test

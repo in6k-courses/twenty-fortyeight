@@ -23,22 +23,22 @@ public class ScoreTest {
     }
 
     @Test
-    public void emptyScorePointsTest() throws Exception {
+    public void pointsEmptyScoreTest() throws Exception {
         assertThat(emptyScore.getPoints(), is(0));
     }
 
     @Test
-    public void emptyScoreTimeTest() throws Exception {
+    public void timeEmptyScoreTest() throws Exception {
         assertThat(emptyScore.getTime(), is(LocalDateTime.MIN));
     }
 
     @Test
-    public void parametersScorePointsTest() throws Exception {
+    public void pointsParametersScoreTest() throws Exception {
         assertThat(parametersScore.getPoints(), is(testPoints));
     }
 
     @Test
-    public void parametersScoreTimeTest() throws Exception {
+    public void timeParametersScoreTest() throws Exception {
         assertThat(parametersScore.getTime(), is(testTime));
     }
 }

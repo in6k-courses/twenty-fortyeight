@@ -1,9 +1,7 @@
-package com.in6k.GameLogic;
+package com.in6k.GameLogic.Cell;
 
-import com.in6k.GameLogic.Cell.CellWrapper;
 import com.in6k.GameResource.Color;
 import com.in6k.GameResource.Delimiter;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -11,12 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CellWrapperTest {
 
-    @Before
-    public void setUp() throws Exception {
-        CellWrapper.initializeCellWrapper();
-    }
-
-    private void executeWrapperTest(int testNumber, String color) {
+    private void executeColorWrapperTest(int testNumber, String color) {
         String expectWrapper = cellDelimiterWrapper(color, testNumber);
         String actualWrapper = CellWrapper.wrapper(testNumber);
         assertThat(actualWrapper, is(expectWrapper));
@@ -25,66 +18,66 @@ public class CellWrapperTest {
     private String cellDelimiterWrapper(String color, int number) {
         String numberToString = (number == 0) ? " " : String.valueOf(number);
         String formatted = String.format("%4s", numberToString);
-        return color + Delimiter.celleLeft + formatted + Delimiter.cellRight;
+        return color + Delimiter.CELLE_LEFT + formatted + Delimiter.CELL_RIGHT;
     }
 
     @Test
     public void emptyWrapperTest() throws Exception {
-        executeWrapperTest(0, Color.white);
+        executeColorWrapperTest(0, Color.WHITE);
     }
 
     @Test
     public void redWrapperTest() throws Exception {
-        executeWrapperTest(2, Color.red);
+        executeColorWrapperTest(2, Color.RED);
     }
 
     @Test
     public void greenWrapperTest() throws Exception {
-        executeWrapperTest(4, Color.green);
+        executeColorWrapperTest(4, Color.GREEN);
     }
 
     @Test
     public void yellowWrapperTest() throws Exception {
-        executeWrapperTest(8, Color.yellow);
+        executeColorWrapperTest(8, Color.YELLOW);
     }
 
     @Test
     public void blueWrapperTest() throws Exception {
-        executeWrapperTest(16, Color.blue);
+        executeColorWrapperTest(16, Color.BLUE);
     }
 
     @Test
     public void purpleTwoWrapperTest() throws Exception {
-        executeWrapperTest(32, Color.purple);
+        executeColorWrapperTest(32, Color.PURPLE);
     }
 
     @Test
     public void skyBlueWrapperTest() throws Exception {
-        executeWrapperTest(64, Color.skyBlue);
+        executeColorWrapperTest(64, Color.SKY_BLUE);
     }
 
     @Test
     public void greenBackWrapperTest() throws Exception {
-        executeWrapperTest(128, Color.greenBack);
+        executeColorWrapperTest(128, Color.GREEN_BACK);
     }
 
     @Test
     public void blueBackWrapperTest() throws Exception {
-        executeWrapperTest(256, Color.blueBack);
+        executeColorWrapperTest(256, Color.BLUE_BACK);
     }
 
     @Test
     public void purpleBackWrapperTest() throws Exception {
-        executeWrapperTest(512, Color.purpleBack);
+        executeColorWrapperTest(512, Color.PURPLE_BACK);
     }
 
     @Test
     public void yellowBackWrapperTest() throws Exception {
-        executeWrapperTest(1024, Color.yellowBack);
+        executeColorWrapperTest(1024, Color.YELLOW_BACK);
     }
 
     @Test
     public void whiteBackWrapperTest() throws Exception {
-        executeWrapperTest(2048, Color.whiteBack);
+        executeColorWrapperTest(2048, Color.WHITE_BACK);
     }
 }
